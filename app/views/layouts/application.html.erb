@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>シェアバイ</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <header>
+  <div class="header-logo">
+  <% if @current_user %>
+  <%= link_to("シェアバイ", "/posts/index") %>
+  <% else %>
+  <%= link_to("シェアバイ","/") %>
+  <% end %>
+  </div>
+  <ul class="header-menus">
+  <% if @current_user %>
+  <li>
+  <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
+  </li>
+  <li>
+  <%= link_to("口コミ一覧","/posts/index") %>
+  </li>
+  <li>
+   <%= link_to("新規投稿", "/posts/new") %>
+   </li>
+   <li>
+   <%= link_to("ユーザー一覧","/users/index") %>
+   </li>
+   <li>
+   <%= link_to("ログアウト","/logout", {method: "post"}) %>
+   </li>
+   <% else %>
+   <li>
+   <%= link_to("新規登録","/signup") %>
+   </li>
+   <li>
+   <%= link_to("ログイン","/login") %>
+   </li>
+   <% end %>
+  </ul>
+  </header>
+
+  <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
