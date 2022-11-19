@@ -1,0 +1,11 @@
+<div class="main posts-index">
+<h1 class="users-heading">店舗を探す</h1>
+<body>
+新着の口コミ<br>
+
+カテゴリから店舗を探す<br>
+<%= button_to '飲食店',{ controller: 'posts', action: 'index'}, {method: :get} %>
+<%= button_to 'アパレル',{ controller: 'posts', action: 'index' } , {method: :get}%>
+<%= button_to '小売店', { controller: 'posts', action: 'index'}  , {method: :get}%>
+<%= button_to 'その他', {controller: 'posts', action: 'index'}  , {method: :get}%>
+</body>

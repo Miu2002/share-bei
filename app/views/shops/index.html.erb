@@ -1,0 +1,14 @@
+<div class="main shops-index">
+ <body>
+ <h1>name</h1>
+ <% @shops.each do |shop| %>
+  店舗名：<%= shop.name %>
+  住所：<%= shop.address %><br>
+  アクセス：<%= shop.access %><br>
+  電話番号：<%=  shop.phone_number %><br>
+  <% end %>
+ 上位の口コミ<br>
+ <%= link_to("口コミの追加","/posts/new") %><br>
+ <%= link_to("口コミ一覧","/posts/index") %>
+    </body>
+  </div>

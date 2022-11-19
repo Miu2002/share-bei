@@ -1,10 +1,17 @@
 <div class="main user-show">
   <div class="container">
+  <h1 class="users-heading">My page</h1>
     <div class="user">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
       <%= link_to("編集","/users/#{@user.id}/edit") %>
+    <div class="post">
+    <h3>投稿<br>
+    <%= @post.content %></h3>
+    <%=  button_to'検討リスト',{controller: 'users',action: 'index'},{method: :get} %><br>
+    <%=  link_to("いいねを押した投稿","/favorite/index") %>
+       </div> 
       <% end %>
     </div>
   </div>

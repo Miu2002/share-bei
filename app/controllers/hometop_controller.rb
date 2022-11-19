@@ -1,2 +1,0 @@
-class HometopController < ApplicationController
-end

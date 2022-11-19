@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @post = Post.find_by(id: params[:id])
     end
 
     def new
@@ -19,7 +20,6 @@ class UsersController < ApplicationController
         @user = User.new(
             name: params[:name],
             email: params[:email],
-            image_name: "default_user.jpg",
             password: params[:password]
         )
         if @user.save
@@ -70,12 +70,6 @@ class UsersController < ApplicationController
             @password = params[:password]
             render("users/login_form")
         end
-      end
-
-      def logout
-        session[:user_id] = nil
-        flash[:notice] = "ログアウトしました"
-        redirect_to("/login")
       end
 
       def ensure_correct_user
