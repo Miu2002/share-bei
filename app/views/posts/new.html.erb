@@ -1,22 +1,18 @@
 <div class="main posts-new">
   <div class="container">
-
-    <%=form_tag("/posts/create") do %>
+  <%= form_with url: new_comment_path do |f| %>
     <div class="form">
-     <div class="form-body">
-     <h1>口コミを追加</h1><br>
-     <h2>店舗カテゴリー</h2>
-     <%= button_to '飲食店',{ controller: 'posts', action: 'index'}, {method: :get} %>
-<%= button_to 'アパレル',{ controller: 'posts', action: 'index' } , {method: :get}%>
-<%= button_to '小売店', { controller: 'posts', action: 'index'}  , {method: :get}%>
-<%= button_to 'その他', {controller: 'posts', action: 'index'}  , {method: :get}%>
-
-      <textarea name="content"></textarea>
-      <h3>店舗評価 </h3>
-      <input type="submit" value="投稿">
+      <div class="form-body">
+        <%= f.label :content, '口コミ' %>
+        <%= f.text_field :content %>
+        <%= f.label :rate, '店舗評価' %>
+        <%= f.number_field :rate %>
+        <%= f.label :is_recommendable, 'おすすめ' %>
+        <%= f.check_box :is_recommendable %>
+        <%= f.submit "送信" %>
+      </div>
     </div>
-   </div>
-  <% end %>
- </div>
+   <% end %>
+  </div>
 </div>
 

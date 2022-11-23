@@ -17,13 +17,17 @@ class PostsController < ApplicationController
   def create
     @post=Post.new(
       content: params[:content],
-      user_id: @current_user.id
+      user_id: @current_user.id,
+      shop_id: params[:shop_id],
+      rate: params[:rate],
+      is_recommendable: params[:is_recommendable]
       )
+
     if @post.save
       flash[:notice] = "投稿を作成しました"
-    redirect_to("/posts/index")
+    redirect_to shop_path(shop_id: params[:shop_id])
     else
-      render("posts/new")
+      render new_comment_path(shop_id: params[:shop_id])
     end
   end
 
