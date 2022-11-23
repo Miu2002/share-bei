@@ -1,12 +1,18 @@
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">口コミを追加</h1>
-    
+
     <%=form_tag("/posts/create") do %>
     <div class="form">
      <div class="form-body">
+     <h1>口コミを追加</h1><br>
+     <h2>店舗カテゴリー</h2>
+     <%= button_to '飲食店',{ controller: 'posts', action: 'index'}, {method: :get} %>
+<%= button_to 'アパレル',{ controller: 'posts', action: 'index' } , {method: :get}%>
+<%= button_to '小売店', { controller: 'posts', action: 'index'}  , {method: :get}%>
+<%= button_to 'その他', {controller: 'posts', action: 'index'}  , {method: :get}%>
+
       <textarea name="content"></textarea>
-      <h2>店舗評価 </h2>
+      <h3>店舗評価 </h3>
       <input type="submit" value="投稿">
     </div>
    </div>
