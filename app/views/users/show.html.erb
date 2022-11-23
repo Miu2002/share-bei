@@ -7,8 +7,7 @@
       <% if @user.id == @current_user.id %>
       <%= link_to("編集","/users/#{@user.id}/edit") %>
     <div class="post">
-    <h3>投稿<br>
-    <%= @post.content %></h3>
+    <h3>投稿</h3>
     <%=  button_to'検討リスト',{controller: 'users',action: 'index'},{method: :get} %><br>
     <%=  link_to("いいねを押した投稿","/favorite/index") %>
        </div> 

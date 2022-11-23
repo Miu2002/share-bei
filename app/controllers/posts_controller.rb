@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user
   
   def index
-      @posts = Post.all
+      @posts = Post.where(shop_id: params[:shop_id])
   end
 
   def show
