@@ -19,14 +19,12 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => "posts#destroy"
 
   get 'shops' => "shops#index"
-  get 'shops/:shop_id' => "shops#show", as: :shop
+  get 'shops/:shop_category_id' => "shops#show", as: :shop
   get 'shops/:shop_id/posts' => "posts#index"
   get 'shops/:shop_id/posts/new' => "posts#new", as: :new_comment
   post 'shops/:shop_id/posts/new' => "posts#create"
-  
+
   get '/' => "home#top"
   get 'about' => "home#about"
-  
-  
   
 end

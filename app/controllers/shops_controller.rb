@@ -1,11 +1,13 @@
 class ShopsController < ApplicationController
 def index
-    @shops = Shop.all
- end
+    @shops = Shop.find_by(id: params[:shop_id])
+  end
+ 
 
  def show
-    @shop = Shop.find_by(id: params[:shop_id])
+    @shops = Shop.find_by(id: params[:shop_category_id])
  end
+
 
 end
 

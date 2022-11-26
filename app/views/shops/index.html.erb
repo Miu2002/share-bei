@@ -1,15 +1,7 @@
 <div class="main shops-index">
- <body>
- <% @shops.each do |shop| %>
-  <% if shop.name  =="マクドナルド池袋西口店"  %>
-  店舗名：<%= shop.name %>
-  住所：<%= shop.address %><br>
-  アクセス：<%= shop.access %><br>
-  電話番号：<%=  shop.phone_number %><br>
-  <% end %>
-  <% end %>
- 上位の口コミ<br>
- <%= link_to("口コミの追加","/posts/new") %><br>
- <%= link_to("口コミ一覧","/posts/index") %>
-    </body>
-  </div>
+<div class="container">
+<p>上位の口コミ</p>
+<h2><%= link_to("口コミ一覧","/shops/1/posts") %></h2>
+<h3><%= link_to("口コミ追加","/shops/1/posts/new") %></h3>
+</div>
+</div>

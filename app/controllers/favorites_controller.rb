@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
 def index
-    @favorite_posts = FavoritePost.all
+ @post = Post.all
  end
 end

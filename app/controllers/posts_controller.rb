@@ -27,12 +27,12 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿を作成しました"
     redirect_to shop_path(shop_id: params[:shop_id])
     else
-      render new_comment_path(shop_id: params[:shop_id])
+    render new_comment_path(shop_id: params[:shop_id])
     end
   end
 
   def edit 
-    @post= Post.find_by(id: params[:id]) 
+    @post= Post.(id: params[:id]) 
   end
 
   def update
@@ -56,6 +56,8 @@ end
 
 
   def top
+    @shops= Shop.order(updated_at: :desc).limit(2)
+    @posts = Post.where(shop_id: params[:shop_id])
   end
 
 end
