@@ -1,6 +1,13 @@
-<div class="main shops-show">
-<h1 class="shops-heading">店舗一覧</h1>
+<div class="main shops-index">
 <div class="container">
-<li><%= link_to(@shops.name,"/shops") %></li>
- </div>
+<h1 class="shops-heading"><%= @shops.name %></h1>
+<div class="shops">
+アドレス：<%= @shops.address %><br>
+アクセス:<%= @shops.access %><br>
+電話番号:<%= @shops.phone_number %>
+</div>
+<h2>上位の口コミ</h2>
+<h3><%= link_to("口コミ一覧","/shops/1/posts") %></h3>
+<h4><%= link_to("口コミ追加","/shops/1/posts/new") %></h4>
+</div>
 </div>
