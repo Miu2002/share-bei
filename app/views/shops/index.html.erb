@@ -1,0 +1,12 @@
+<div class="main shops-show">
+<div class="container">
+<h1 class="shops-heading">店舗一覧</h1>
+<table>
+<% @shops.each do |shop| %>
+<tr><td><%= link_to(shop.name,"/shops/#{shop.id}") %><br></td>
+<td><%= shop.access %></td>
+</tr>
+<% end %>
+   </div>
+ </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="main shops-index">
+<div class="main shops-show">
 <div class="container">
 <h1 class="shops-heading"><%= @shops.name %></h1>
 <div class="shops">
@@ -7,7 +7,11 @@
 電話番号:<%= @shops.phone_number %>
 </div>
 <h2>上位の口コミ</h2>
-<h3><%= link_to("口コミ一覧","/shops/1/posts") %></h3>
-<h4><%= link_to("口コミ追加","/shops/1/posts/new") %></h4>
+<% @posts.each do |post| %>
+<%= post.user.name %> 
+<%= post.content%><br>
+<% end %> 
+<h3><%= link_to("口コミ一覧",@path) %></h3>
+<h4><%= link_to("口コミ追加",@path2) %></h4>
 </div>
 </div>

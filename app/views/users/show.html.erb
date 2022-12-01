@@ -9,7 +9,9 @@
     <div class="post">
     <h4>過去の投稿</h4>
     <% @post.each do |post| %>
-    <li><%= post.content %></li>
+      <button><%= link_to("編集","edit_shop_post_path") %></button>
+    <%= post.shop.name %>
+    <%= post.content %><br>
     <% end %>
     <%=  button_to'検討リスト',{controller: 'users',action: 'index'},{method: :get} %><br>
     

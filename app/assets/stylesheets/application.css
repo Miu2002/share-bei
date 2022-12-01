@@ -37,26 +37,26 @@
   
   /* 共通レイアウト ================================ */
   body {
-    color: #2d3133;
-    background-color: #96cd3e;
+    color: #0f0f0f;
+    background-color: #3eb0cd;
     margin: 0;
     min-height: 1vh;
   }
   
   .main {
     position: absolute;
-    top: 64px;
+    top: 70px;
     width: 100%;
     height: auto;
     min-height: 100%;
-    background-color: #edeeef;
+    background-color: #ffffff;
   }
   
   .container {
-    max-width: 600px;
-    margin: 60px auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 700px;
+    margin: 70px auto;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: both;
   }
   
@@ -70,33 +70,33 @@
   
   .header-logo {
     float: left;
-    padding-left: 20px;
+    padding-left: 45px;
     color: rgba(255, 255, 255, 0.946);
-    font-size: 22px;
-    line-height: 64px;
+    font-size: 30px;
+    line-height: 70px;
   }
   
   .header-logo a{
     color: white;
-    font-size: 22px;
+    font-size: 30px;
   }
   
   .header-menus {
     float: right;
-    padding-right: 20px;
+    padding-right: 40px;
   }
   
   .header-menus li {
     float: left;
     line-height: 64px;
-    font-size: 13px;
+    font-size: 25px;
     color: rgb(17, 12, 12);
-    padding-left: 15px;
+    padding-left: 20px;
   }
   
   .header-menus a {
     float: left;
-    font-size: 13px;
+    font-size: 17px;
     color: white;
   }
   
@@ -222,7 +222,7 @@
   .flash {
     padding: 10px 0;
     color: white;
-    background: rgb(251, 170, 88);
+    background: rgb(88, 221, 251);
     text-align: center;
     position: absolute;
     top: 64px;

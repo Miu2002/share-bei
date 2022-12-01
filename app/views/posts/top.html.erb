@@ -1,18 +1,22 @@
 <div class="main posts-index">
 <div class="container">
-<h1 class="users-heading">店舗を探す</h1>
+<h1 class="posts-heading">店舗を探す</h1>
 <h2>新着の口コミ</h2>
-<ul>
 <div class="post_shop_name">
-  <% @shops.each do |shop| %>
-    <li><%= link_to(shop.name ,"/shops/#{shop.id}")%></li>
- <% end %>
-</ul>
-      
+<table>
+  <% @posts.each do |post| %>
+    <%= link_to(post.shop.name,"/shops/#{post.shop_id}") %>
+    <%= truncate(post.content, length: 10) %><br>
+  <% end %>    
  <h3>カテゴリから店舗を探す<br>
-<%= link_to("飲食店","/shops/1/posts") %>
-<%= link_to("小売店","/shops/2/posts") %>
-<%= link_to("アパレル","/shops/3/posts") %>
-<%= link_to("その他","/shops/4/posts") %>
+ <table>
+<tr><td><button ><%= link_to("飲食店","/shops/index/1") %></button></td>
+<td><button><%= link_to("小売店","/shops/index/2") %></button></td></tr><tr>
+<td><button><%= link_to("アパレル","/shops/index/3") %></button></td>
+<td><button><%= link_to("その他","/shops/index/4") %></button></td>
+ <tr></table>
 </h3>
+   </div>
+  </div>
+</div>
 
