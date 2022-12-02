@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     if @post.save
       flash[:notice] = '投稿を編集しました'
-      redirect_to shop_posts_path(shop_id: params[:shop_id],post_id: params[:post_id])
+      redirect_to shop_posts_path(shop_id: params[:shop_id])
     else
       render edit_shop_post_path(shop_id: params[:shop_id], post_id: params[:post_id])
     end

@@ -9,7 +9,7 @@
     <div class="post">
     <h4>過去の投稿</h4>
     <% @post.each do |post| %>
-      <button><%= link_to("編集","edit_shop_post_path") %></button>
+      <button><%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button>
     <%= post.shop.name %>
     <%= post.content %><br>
     <% end %>

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @post = Post.all
+    @shop = Shop.find_by(id: params[:id])
   end
 
   def new
@@ -75,6 +76,6 @@ class UsersController < ApplicationController
     return unless @current_user.id != params[:id].to_i
 
     flash[:notice] = '権限がありません'
-    redirect_to user_path(id: [:id])
+    redirect_to('users/login_form')
   end
 end

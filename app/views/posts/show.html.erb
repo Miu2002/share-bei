@@ -11,7 +11,7 @@
       <%= @post.created_at %>
       </div>
       <div class="post-menus">
-      <%= link_to "編集",edit_shop_post_path %>
+      <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:shop.id) %>
       <%= link_to "削除",destroy_shop_post_path, {method: "post"} %>
       </div>
     </div>
