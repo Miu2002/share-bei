@@ -1,3 +1,8 @@
 <div class="main user-show">
   <div class="container">
   <h1 class="users-heading">いいねを押した投稿</h1>
+  <p><% @favorite_post.each do |post| %></p>
+    <%= post.content %>
+    <% end %>
+    </div>
+  </div>

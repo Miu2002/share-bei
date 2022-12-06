@@ -12,15 +12,15 @@
 <%= post.user.name %> 
 <%= post.content%><br>
 <% if @post %>
-    <%= link_to post_favorites_post_path(post.id), method: :delete do %>
-    <% end %>
+   <%= link_to post_favorites_post_path(post.id), method: :delete do %>
+   <% end %>
 <% else %>
   <%= form_tag(post_favorites_post_path(post.id)) do %>
     <%# <%= link_to post_favorites_post_path(post.id), method: :post do %> 
     <input type="hidden" name="post_id" value="#{post.id}">
     <input type="submit" value="❤️">
- <div>評価：<%= post.rate %></div>
- いいね数：<%= post.favorite_posts.count %>
+ <div>評価：<%= post.rate %>
+ いいね数：<%= post.favorite_posts.count %></div>
         <% end %>
     <% end %>
 <% end %> 

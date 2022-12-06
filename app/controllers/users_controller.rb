@@ -4,12 +4,16 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, { only: [:edit, :update] }
 
   def index
-    @users = User.all
+    @post = Post.find(params[:id])
+    @users = @post.content
+
+    favorites = Favorite.where(post_id: @post.id).pluck(:user_id)
+    @favorite_post = Post.find(favorites)
   end
 
   def show
     @user = User.find_by(id: params[:id])
-    @post = Post.all
+    @post = Post.where(user_id: @user.id)
     @shop = Shop.find_by(id: params[:id])
   end
 
@@ -70,6 +74,12 @@ class UsersController < ApplicationController
       @password = params[:password]
       render('users/login_form')
     end
+  end
+
+  def logout 
+    session[:user_id] = nil 
+    flash[:notice] = 'ログアウトしました' 
+    redirect_to('posts/top', allow_other_host: true) 
   end
 
   def ensure_correct_user

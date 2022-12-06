@@ -8,13 +8,7 @@
   </head>
 
   <body>
-  <div class="header-logo">
-  <% if @current_user %>
-  <%= link_to("シェアバイ", "/posts/index") %>
-  <% else %>
-  <%= link_to("シェアバイ","/") %>
-  <% end %>
-  </div>
+  <div class="header-logo">シェアバイ</div>
   <ul class="header-menus">
   <% if @current_user %>
   <li>
@@ -22,6 +16,9 @@
   </li>
    <li>
    <%= link_to("店舗を探す","/posts/top") %>
+   </li>
+   <li>
+   <%= link_to("ログアウト","/logout") %>
    </li>
    <% else %>
    <li>

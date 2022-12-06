@@ -5,7 +5,7 @@
       <h3><%= @user.name %></h3>
       <p>メールアドレス:<%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-      <button class= "edit"><%= link_to("編集","/users/#{@user.id}/edit") %></button>
+      <button><%= link_to("編集","/users/#{@user.id}/edit") %></button>
     <h4>過去の投稿</h4>
     <% @post.each do |post| %>
     <%= post.shop.name %>
