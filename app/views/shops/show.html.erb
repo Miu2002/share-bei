@@ -4,14 +4,27 @@
 <div class="shops">
 アドレス：<%= @shops.address %><br>
 アクセス:<%= @shops.access %><br>
-電話番号:<%= @shops.phone_number %>
+電話番号:<%= @shops.phone_number %><br>
+評価:<%= @average_shop_posts %>
 </div>
 <h2>上位の口コミ</h2>
 <% @posts.each do |post| %>
 <%= post.user.name %> 
 <%= post.content%><br>
+<% if @post %>
+    <%= link_to post_favorites_post_path(post.id), method: :delete do %>
+    <% end %>
+<% else %>
+  <%= form_tag(post_favorites_post_path(post.id)) do %>
+    <%# <%= link_to post_favorites_post_path(post.id), method: :post do %> 
+    <input type="hidden" name="post_id" value="#{post.id}">
+    <input type="submit" value="❤️">
+ <div>評価：<%= post.rate %></div>
+ いいね数：<%= post.favorite_posts.count %>
+        <% end %>
+    <% end %>
 <% end %> 
-<h3><%= link_to("口コミ一覧",@path) %></h3>
-<h4><%= link_to("口コミ追加",@path2) %></h4>
+<button><%= link_to("口コミ一覧",@path) %></button>
+<button><%= link_to("口コミ追加",@path2) %></button>
 </div>
 </div>

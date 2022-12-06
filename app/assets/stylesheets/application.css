@@ -1,3 +1,7 @@
+/*= require_self　
+ *= require_tree
+ */
+
 /* reset ================================ */
 * {
     box-sizing: border-box;
@@ -45,7 +49,7 @@
   
   .main {
     position: absolute;
-    top: 70px;
+    top: 80px;
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -53,10 +57,10 @@
   }
   
   .container {
-    max-width: 700px;
-    margin: 70px auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 600px;
+    margin: 35px auto;
+    padding-left: 10px;
+    padding-right: 10px;
     clear: both;
   }
   
@@ -89,14 +93,14 @@
   .header-menus li {
     float: left;
     line-height: 64px;
-    font-size: 25px;
+    font-size: 30px;
     color: rgb(17, 12, 12);
     padding-left: 20px;
   }
   
   .header-menus a {
     float: left;
-    font-size: 17px;
+    font-size: 22px;
     color: white;
   }
   

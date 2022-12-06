@@ -5,5 +5,5 @@ class Post < ApplicationRecord
   validates :user_id, { presence: true }
   has_many :post_category_relations
   has_many :categories, through: :post_category_relations
-  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts
 end

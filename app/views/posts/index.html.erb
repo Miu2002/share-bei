@@ -1,11 +1,13 @@
-<body>
 <div class="main posts-index">
+<div class="container">
 <h1 class="posts-heading">口コミ一覧</h1>
 <div class="container">
 <p><% @posts.each do |post| %></p>
   <%= post.user.name%>
   <%= post.content%>
+  <% if post.user == @current_user %>
    <button><%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button>
+     <% end %>
     <% end %>
    </div>
   </div>

@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   
   get '/' => "home#top"
   get 'about' => "home#about"
+  
+  resources :posts do
+    resource :favorites_post, only: [:create, :destroy]
+  end
 
-  
-  
 end

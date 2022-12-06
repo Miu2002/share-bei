@@ -5,18 +5,17 @@
       <h3><%= @user.name %></h3>
       <p>メールアドレス:<%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-      <%= link_to("編集","/users/#{@user.id}/edit") %>
-    <div class="post">
+      <button class= "edit"><%= link_to("編集","/users/#{@user.id}/edit") %></button>
     <h4>過去の投稿</h4>
     <% @post.each do |post| %>
-      <button><%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button>
     <%= post.shop.name %>
-    <%= post.content %><br>
+    <%= post.content %>
+    <button class= "edit">
+    <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button><br>
     <% end %>
-    <%=  button_to'検討リスト',{controller: 'users',action: 'index'},{method: :get} %><br>
-    
+    <button><%=  link_to'いいねを押した投稿',{controller: 'users',action: 'index'},{method: :get} %></button>
        </div> 
-      <% end %>
+       <% end %>
     </div>
   </div>
 </div>

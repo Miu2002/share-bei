@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @user = User.find_by(id: @post.user_id)
+    @shop = Shop.find_by(id: params[:shop_id])
   end
 
   def new
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
   end
 
   def top
-    @shops = Shop.order(updated_at: :desc).limit(3)
-    @posts = Post.order(updated_at: :desc).limit(3)
+    @shops = Shop.order(updated_at: :desc).limit(4)
+    @posts = Post.order(updated_at: :desc).limit(4)
   end
 end
