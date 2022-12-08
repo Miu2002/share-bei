@@ -1,22 +1,48 @@
 <div class="main posts-top">
-<div class="container">
-<h1 class="posts-heading">店舗を探す</h1>
-<h2>新着の口コミ</h2>
-<div class="post_shop_name">
-<table>
-  <% @posts.each do |post| %>
-    <%= link_to(post.shop.name,"/shops/#{post.shop_id}") %>
-    <%= truncate(post.content, length: 10) %><br>
-  <% end %>    
- <h3>カテゴリから店舗を探す<br>
- <table>
-<tr><td><button class="category"><%= link_to("飲食店","/shops/index/1") %></button></td>
-<td><button class="category"><%= link_to("小売店","/shops/index/2") %></button></td></tr><tr>
-<td><button class="category"><%= link_to("アパレル","/shops/index/3") %></button></td>
-<td><button class="category"><%= link_to("その他","/shops/index/4") %></button></td>
- <tr></table>
-</h3>
-   </div>
+  <div class="container">
+<main>
+<div class="wrapper">
+<h1 class="sec-title">店舗を探す</h1>
   </div>
+<section id="news" class="wrapper">
+<h2 class="sec-title" >新着の口コミ</h2>
+<div>
+<% @posts.each do |post| %>
+<p>□
+<%= link_to(post.shop.name,"/shops/#{post.shop_id}") %>
+<%= truncate(post.content, length: 10) %></p>
+<% end %>
 </div>
-
+</section>
+<section id="category" class="wrapper">
+ <h3 class="sec-title">カテゴリから店舗を探す</h3>
+<table>
+<tr>
+<td>
+  <%= link_to("/shops/index/1") do%>
+<button class="btn_02">飲食店　</button>
+<% end %> 
+ </td>
+ <td>
+  <%= link_to("/shops/index/2") do%>
+<button class="btn_02">小売店　</button>
+<% end %> 
+ </td>
+ </tr>
+ <tr>
+  <td>
+  <%= link_to("/shops/index/3") do%>
+<button class="btn_02">アパレル</button>
+<% end %> 
+ </td>
+<td>
+<%= link_to("/shops/index/4") do%>
+<button class="btn_02">その他　</button>
+<% end %> 
+</td>
+ </tr></table>
+   </section>
+   </main>
+   </div>
+   </div>
+</html>

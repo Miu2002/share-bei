@@ -1,21 +1,25 @@
 <div class="main user-show">
   <div class="container">
-  <h1 class="users-heading">My page</h1>
-    <div class="user">
-      <h3><%= @user.name %></h3>
-      <p>メールアドレス:<%= @user.email %></p>
+  <main>
+  <div class="wrapper">
+  <h1 class="sec-title">My page</h1>
+  <section id="news" class="wrapper">
+      <h2><%= @user.name %><br>
+      メールアドレス:<%= @user.email %></h2>
       <% if @user.id == @current_user.id %>
       <button><%= link_to("編集","/users/#{@user.id}/edit") %></button>
-    <h4>過去の投稿</h4>
+      <section id="news" class="wrapper">
+    <h3 class="sec-title">過去の投稿</h3>
+    <div>
     <% @post.each do |post| %>
-    <%= post.shop.name %>
+    <p>□<%= post.shop.name %>
     <%= post.content %>
     <button class= "edit">
-    <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button><br>
-    <% end %>
-    <button><%=  link_to'いいねを押した投稿',{controller: 'users',action: 'index'},{method: :get} %></button>
-       </div> 
-       <% end %>
+    <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button><br></p>
+         <% end %>
+        </div> 
+    <button><%= link_to'my検討リスト',{controller: 'posts', action: 'show'},{method: :get} %></button>
+      <% end %>
     </div>
   </div>
-</div>
+ 

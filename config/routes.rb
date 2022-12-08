@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'users/:id/update' => "users#update"
   get 'users/:id/edit' => "users#edit"
   post 'users/create' => "users#create"
-  get 'users/index' => "users#index"
+  # get 'users/index' => "users#index"
   get 'users/:id' => "users#show",as: :user
   
   get 'posts/top' => "posts#top"
@@ -36,5 +36,10 @@ Rails.application.routes.draw do
   resources :posts do
     resource :favorites_post, only: [:create, :destroy]
   end
+
+  resources :shops do
+    resource :favorites, only: [:create]
+  end
+ 
 
 end

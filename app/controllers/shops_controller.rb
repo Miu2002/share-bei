@@ -1,6 +1,9 @@
 class ShopsController < ApplicationController
-  def index
+  
+   def index
     @shops = Shop.where(shop_category_id: params[:shop_category_id])
+    @shop = Favorite.where(user_id: @user).exists?
+
   end
 
   def show
@@ -10,7 +13,6 @@ class ShopsController < ApplicationController
     @shops = Shop.find_by(id: params[:shop_id])
     @posts = Post.where(shop_id: params[:shop_id])
 
-    @user = @current_user.id
     @post = Favorite.where(user_id: @user).exists?
 
     @average_shop_posts = @posts.average(:rate).to_f.round(1)

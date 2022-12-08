@@ -1,30 +1,33 @@
 <div class="main shops-show">
 <div class="container">
-<h1 class="shops-heading"><%= @shops.name %></h1>
+<main>
+<h1 class="sec-title"><%= @shops.name %></h1>
 <div class="shops">
-アドレス：<%= @shops.address %><br>
+住所：<%= @shops.address %><br>
 アクセス:<%= @shops.access %><br>
 電話番号:<%= @shops.phone_number %><br>
-評価:<%= @average_shop_posts %>
-</div>
-<h2>上位の口コミ</h2>
+評価:<%= @average_shop_posts %></div>
+<h2 class="sec-title">上位の口コミ</h2>
+<div>
 <% @posts.each do |post| %>
 <%= post.user.name %> 
-<%= post.content%><br>
-<% if @post %>
+<%= post.content%>
+<p><% if @post %>
    <%= link_to post_favorites_post_path(post.id), method: :delete do %>
+    <input type="submit" value="❤️">
    <% end %>
 <% else %>
   <%= form_tag(post_favorites_post_path(post.id)) do %>
     <%# <%= link_to post_favorites_post_path(post.id), method: :post do %> 
     <input type="hidden" name="post_id" value="#{post.id}">
     <input type="submit" value="❤️">
- <div>評価：<%= post.rate %>
- いいね数：<%= post.favorite_posts.count %></div>
-        <% end %>
+ 評価：<%= post.rate %>
+ いいね数：<%= post.favorite_posts.count %></p>
     <% end %>
-<% end %> 
-<button><%= link_to("口コミ一覧",@path) %></button>
-<button><%= link_to("口コミ追加",@path2) %></button>
-</div>
+   <% end %>
+ <% end %> 
+<button class="btn_02"><%= link_to("口コミ一覧",@path) %></button>
+<button class="btn_02"><%= link_to("口コミ追加",@path2) %></button>
+  </main>
+ </div>
 </div>

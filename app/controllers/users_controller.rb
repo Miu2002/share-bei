@@ -3,14 +3,7 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, { only: [:new, :create, :login_form, :login] }
   before_action :ensure_correct_user, { only: [:edit, :update] }
 
-  def index
-    @post = Post.find(params[:id])
-    @users = @post.content
-
-    favorites = Favorite.where(post_id: @post.id).pluck(:user_id)
-    @favorite_post = Post.find(favorites)
-  end
-
+  
   def show
     @user = User.find_by(id: params[:id])
     @post = Post.where(user_id: @user.id)
@@ -79,7 +72,7 @@ class UsersController < ApplicationController
   def logout 
     session[:user_id] = nil 
     flash[:notice] = 'ログアウトしました' 
-    redirect_to('posts/top', allow_other_host: true) 
+    redirect_to("/posts/top", allow_other_host: true) 
   end
 
   def ensure_correct_user

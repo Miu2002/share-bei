@@ -1,12 +1,23 @@
-<div class="main shops-show">
+<div class="main shops-index">
 <div class="container">
-<h1 class="shops-heading">店舗一覧</h1>
-<table>
+<main>
+<div class="wrapper">
+<h1 class="sec-title">店舗一覧</h1>
+<section id="news" class="wrapper">
+<div>
 <% @shops.each do |shop| %>
-<tr><td><%= link_to(shop.name,"/shops/#{shop.id}") %><br></td>
-<td><%= shop.access %></td>
+<tr><td><p>□<%= link_to(shop.name,"/shops/#{shop.id}") %><br></td>
+<td><%= shop.access %></td></p>
 </tr>
+  <%= form_tag(shop_favorites_path(shop.id)) do %>
+    <%# <%= link_to shop_favorites_path(shop.id), method: :shop do %> 
+    <input type="hidden" name="shop_id" value="#{shop.id}">
+    <input type="submit" value="検討">
+    <% end %>
 <% end %>
+     </section>
+    </div>
    </div>
- </div>
+  </div>
+ </main>
 </div>

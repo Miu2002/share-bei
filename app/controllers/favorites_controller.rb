@@ -1,13 +1,15 @@
 class FavoritesController < ApplicationController
   def create
-    @favorite = current_user.favorites.create(shop_id: params[:shop_id])
-    redirect_back(fallback_location: root_path)
+    @favorite = Favorite.find_or_initialize_by(user_id: @current_user.id, shop_id: params[:shop_id])
+    @favorite.save
+    redirect_back fallback_location: { controller: "shops", action: "index"}
   end
 
-  def destroy
-    @post = Post.find(params[:shop_id])
-    @favorite = current_user.favorites.find_by(shop_id: @shop.id)
-    @favorite.destroy
-    redirect_back(fallback_location: root_path)
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
   end
 end
+
+
+
+  

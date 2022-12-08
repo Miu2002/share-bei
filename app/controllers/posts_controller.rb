@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:top]
 
   def index
     @posts = Post.where(shop_id: params[:shop_id])
@@ -7,8 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
-    @user = User.find_by(id: @post.user_id)
+    @favorites = Favorite.where(shop_id: params[:shop_id])
     @shop = Shop.find_by(id: params[:shop_id])
   end
 
