@@ -1,0 +1,13 @@
+<div class="main posts-show">
+<div class="container">
+<h1 class="sec-title">My検討リスト</h1>
+<p><% @favorites.each do |favorite| %></p>
+<%= favorite.shop.name %>
+<% @post.each do |post| %>
+    <% if favorite.shop.id == post.shop.id %>
+    <%= truncate(post.content, length: 10) %>
+   <% end %>
+  <% end %>
+  <% end %>
+ </div>
+</div>

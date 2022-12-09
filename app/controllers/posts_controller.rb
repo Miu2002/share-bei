@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @favorites = Favorite.where(shop_id: params[:shop_id])
-    @shop = Shop.find_by(id: params[:shop_id])
+    @favorites = Favorite.where(user_id: params[:user_id])
+    @shop = Shop.find_by(id: params[:user_id])
   end
 
   def new

@@ -32,13 +32,15 @@ Rails.application.routes.draw do
   
   get '/' => "home#top"
   get 'about' => "home#about"
+
+  get 'favorites/index' => "favorites#index"
   
   resources :posts do
     resource :favorites_post, only: [:create, :destroy]
   end
 
   resources :shops do
-    resource :favorites, only: [:create]
+    resource :favorites_shop, only: [:create]
   end
  
 

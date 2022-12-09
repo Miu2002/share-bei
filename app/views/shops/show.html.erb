@@ -2,17 +2,18 @@
 <div class="container">
 <main>
 <h1 class="sec-title"><%= @shops.name %></h1>
-<div class="shops">
-住所：<%= @shops.address %><br>
+<section id="news" class="wrapper">
+<div>住所：<%= @shops.address %><br>
 アクセス:<%= @shops.access %><br>
 電話番号:<%= @shops.phone_number %><br>
-評価:<%= @average_shop_posts %></div>
+店舗評価:<%= @average_shop_posts %>
+<section id="news" class="wrapper">
 <h2 class="sec-title">上位の口コミ</h2>
 <div>
 <% @posts.each do |post| %>
 <%= post.user.name %> 
 <%= post.content%>
-<p><% if @post %>
+<% if @post %>
    <%= link_to post_favorites_post_path(post.id), method: :delete do %>
     <input type="submit" value="❤️">
    <% end %>
@@ -22,12 +23,17 @@
     <input type="hidden" name="post_id" value="#{post.id}">
     <input type="submit" value="❤️">
  評価：<%= post.rate %>
- いいね数：<%= post.favorite_posts.count %></p>
+ いいね数：<%= post.favorite_posts.count %>
     <% end %>
    <% end %>
  <% end %> 
-<button class="btn_02"><%= link_to("口コミ一覧",@path) %></button>
-<button class="btn_02"><%= link_to("口コミ追加",@path2) %></button>
+ <p id="button">
+<%= link_to @path do%><button>口コミ一覧</button>
+    <% end %>
+<%= link_to @path2 do %><button>口コミ追加</button>
+   <% end %>
   </main>
  </div>
 </div>
+
+    

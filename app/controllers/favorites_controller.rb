@@ -8,6 +8,12 @@ class FavoritesController < ApplicationController
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
   end
+
+  def index
+    @favorites = Favorite.where(user_id: @current_user.id)
+    @post = Post.all
+  end
+
 end
 
 

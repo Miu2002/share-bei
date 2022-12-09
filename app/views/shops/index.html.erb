@@ -9,15 +9,14 @@
 <tr><td><p>□<%= link_to(shop.name,"/shops/#{shop.id}") %><br></td>
 <td><%= shop.access %></td></p>
 </tr>
-  <%= form_tag(shop_favorites_path(shop.id)) do %>
-    <%# <%= link_to shop_favorites_path(shop.id), method: :shop do %> 
+  <%= form_tag(shop_favorites_shop_path(shop.id)) do %>
     <input type="hidden" name="shop_id" value="#{shop.id}">
     <input type="submit" value="検討">
     <% end %>
 <% end %>
-     </section>
     </div>
    </div>
   </div>
  </main>
 </div>
+</section>
