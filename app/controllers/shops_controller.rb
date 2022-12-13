@@ -13,9 +13,11 @@ end
     @path2 = "/shops/#{@id}/posts/new"
     @shops = Shop.find_by(id: params[:shop_id])
     @posts = Post.where(shop_id: params[:shop_id])
-    @posts = Post.order(updated_at: :desc).limit(2)
+    @posts = @posts.order(updated_at: :desc).limit(2)
 
     @post = Favorite.where(user_id: @user).exists?
+ 
+    @users = @current_user
 
     @average_shop_posts = @posts.average(:rate).to_f.round(1)
   end
