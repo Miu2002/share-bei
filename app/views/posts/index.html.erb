@@ -4,13 +4,17 @@
 <div class="wrapper">
 <h1 class="sec-title">口コミ一覧</h1>
 <section id="news" class="wrapper">
-<p><% @posts.each do |post| %></p>
-  <%= post.user.name%>
-  <%= post.content%>
+<table>
+<% @posts.each do |post| %>
+  <tr>
+  <td><%= post.user.name%></td>
+  <td><%= post.content%></td>
   <% if post.user == @current_user %>
-   <button><%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button>
-     <% end %>
+   <td><button><%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button>
+     <% end %></td>
     <% end %>
+    </tr>
+    </table>
    </div>
   </div>
 </main>

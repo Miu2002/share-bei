@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get '/' => "home#top"
   get 'about' => "home#about"
 
-  get 'favorites/index' => "favorites#index"
+  get 'favorites/index' => "favorites_shops#index"
   
   resources :posts do
     resource :favorites_post, only: [:create, :destroy]

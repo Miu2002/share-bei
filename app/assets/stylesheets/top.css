@@ -1,24 +1,114 @@
 @charset "UTF-8";
 
 html {
-  font-size: 100%;
-  text-align: center;
-}
+    font-size: 100%;
+    text-align: center;
+  }
+  
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto 50px auto;
+    font-size: 0.9rem;
+    padding: 0 1%;
+  }
+  
+  .sec-title {
+    margin: 0 auto;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
 
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto 50px auto;
-  font-size: 0.9rem;
-  padding: 0 4%;
-}
+/*-------------------------------------------
+shops/show
+-------------------------------------------*/
 
-.sec-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
+#shopinfo table {
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  #shopinfo td {
+    padding: 15px 0px 15px 15px;
+    border-bottom: 2px solid #c8c8c8;
+    border-top: 1px solid #c8c8c8;
+  }
+  
+  #info table {
+    table-layout: fixed;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid #000000;
+  }
+  
+  #info td {
+    padding: 5px 10px;
+    width: 200px;
+  }
+  
+  #info input[type="submit"] {
+    color: #ffffff;
+    border: none;
+  }
+  
+  #info input[type="submit"]:hover {
+    color: #fb0202;
+  }
 
+  .like {
+    text-align: right;
+  }
 
+/*-------------------------------------------
+posts/top
+-------------------------------------------*/
 
+#news table {
+    margin: 0 auto 30px auto;
+    width: 90%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  #news td {
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #c8c8c8;
+    border-top: 1px solid #c8c8c8;
+  }
+  
+  #category table {
+    margin: 0 auto;
+  }
+  
+  #category button {
+    width: 200px;
+    background-color: #24292e;
+    color: #fff;
+    padding: 20px 0px;
+    margin: 50px 30px;
+    border: solid 1px #24292e;
+  }
+  
+  #category button :hover {
+    background: #fff;
+    color: #24292e;
+  }
+  
+  #button button {
+    width: 200px;
+    background-color: #24292e;
+    color: #fff;
+    padding: 15px 0px;
+    margin: 20px 20px;
+    border: solid 1px #24292e;
+  }
+  
+  #button button :hover {
+    background: #fff;
+    color: #24292e;
+  }
 
 #news div {
   border-top: solid 1px #c8c8c8;
@@ -37,9 +127,9 @@ html {
 
 #category button {
   width: 200px;
-  background-color: #24292e;
+  background-color: #333a41;
   color: #fff;
-  padding: 15px 0px;
+  padding: 25px 0px;
   margin: 20px 20px;
   border: solid 1px #24292e;
 }
@@ -51,11 +141,11 @@ html {
 
 #button button{
     width: 200px;
-    background-color: #24292e;
+    background-color: #333436;
     color: #fff;
     padding: 15px 0px;
     margin: 20px 20px;
-    border: solid 1px #24292e;
+    border: solid 1px #333436;
   }
   
   #button button :hover {
@@ -63,3 +153,6 @@ html {
     color: #24292e;
   }
 
+#news h4{
+    text-align: left;
+}

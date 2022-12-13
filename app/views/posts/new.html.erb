@@ -4,7 +4,7 @@
     <div class="form">
       <div class="form-body">
         <%= f.label :content, '口コミ' %>
-        <%= f.text_field :content %>
+        <%= f.text_area :content %>
         <%= f.label :rate, '店舗評価' %>
         <%= f.number_field :rate,min:0, max:5 %>
         <%= f.label :is_recommendable, 'おすすめ' %>

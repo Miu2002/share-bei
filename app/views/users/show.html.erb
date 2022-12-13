@@ -4,25 +4,29 @@
   <div class="wrapper">
   <h1 class="sec-title">My page</h1>
   <section id="news" class="wrapper">
-      <h2><%= @user.name %><br>
-      e-mail:<%= @user.email %></h2>
+  <table><tr><td style="text-align :center;">
+      Name：<%= @user.name %></td></tr>
+      <td style="text-align :center;">E-mail：<%= @user.email  %></td>
       <% if @user.id == @current_user.id %>
-      <button><%= link_to("編集","/users/#{@user.id}/edit") %></button>
+      <tr><td style="text-align :center;"><button>
+      <%= link_to("編集","/users/#{@user.id}/edit") %></button></td></tr>
+      </table></section>
       <section id="news" class="wrapper">
     <h3 class="sec-title">過去の投稿</h3>
-    <div>
+    <table><tr>
     <% @post.each do |post| %>
-    <p><%= post.shop.name %>
-    <%= post.content %>
+    <td><%= post.shop.name %>
+    <%= truncate(post.content, length: 20) %>
     <button class= "edit">
-    <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button><br></p>
-         <% end %>
-        </div>
+    <%= link_to "編集",edit_shop_post_path(post_id:post.id, shop_id:@shop.id) %></button></td>
+      </tr>
+     <% end %>
+     </table>
     <p id="button">    
     <%= link_to("/favorites/index") do%>
       <button>My検討リスト</button>
-        <% end %>
        </p>
+      <% end %>
       <% end %>
     </div>
   </div>

@@ -6,13 +6,14 @@
   </div>
 <section id="news" class="wrapper">
 <h2 class="sec-title" >新着の口コミ</h2>
-<div>
+<table>
+<tr>
 <% @posts.each do |post| %>
-<p>□
-<%= link_to(post.shop.name,"/shops/#{post.shop_id}") %>
-<%= truncate(post.content, length: 10) %></p>
-<% end %>
-</div>
+<td>□<%= link_to(post.shop.name,"/shops/#{post.shop_id}") %></td>
+<td><%= truncate(post.content, length: 15) %></td>
+</tr>
+<% end %> 
+</table>
 </section>
 <section id="category" class="wrapper">
  <h3 class="sec-title">カテゴリから店舗を探す</h3>

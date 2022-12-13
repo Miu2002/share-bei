@@ -1,0 +1,13 @@
+<div class="main posts-show">
+<div class="container">
+<h1 class="sec-title">My検討リスト</h1>
+<section id="news" class="wrapper">
+<table>
+<% @favorites.each do |favorite| %>
+<tr>
+<td><%= favorite.shop.name %></td>
+   <% end %>
+  </tr>
+  </table>
+ </div>
+</div>

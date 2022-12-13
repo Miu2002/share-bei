@@ -4,19 +4,20 @@
 <div class="wrapper">
 <h1 class="sec-title">店舗一覧</h1>
 <section id="news" class="wrapper">
-<div>
+<table>
 <% @shops.each do |shop| %>
-<tr><td><p>□<%= link_to(shop.name,"/shops/#{shop.id}") %><br></td>
-<td><%= shop.access %></td></p>
-</tr>
-  <%= form_tag(shop_favorites_shop_path(shop.id)) do %>
+<tr>
+<td>□<%= link_to(shop.name,"/shops/#{shop.id}") %></td>
+<td><%= shop.access %></td>
+  <td><%= form_tag(shop_favorites_shop_path(shop.id)) do %>
     <input type="hidden" name="shop_id" value="#{shop.id}">
     <input type="submit" value="検討">
-    <% end %>
-<% end %>
-    </div>
+    <% end %></td>
+     <% end %>
+    </tr>
+</table>
+</div>
+</section>
    </div>
   </div>
  </main>
-</div>
-</section>
