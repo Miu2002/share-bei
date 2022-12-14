@@ -7,7 +7,8 @@
 <table>
 <% @shops.each do |shop| %>
 <tr>
-<td>□<%= link_to(shop.name,"/shops/#{shop.id}") %></td>
+<td><%= image_tag shop.shop_photo,width: "90px", height: "70px"  %></td>
+<td style="text-align :center;"><%= link_to(shop.name,"/shops/#{shop.id}") %></td>
 <td><%= shop.access %></td>
   <td><%= form_tag(shop_favorites_shop_path(shop.id)) do %>
     <input type="hidden" name="shop_id" value="#{shop.id}">

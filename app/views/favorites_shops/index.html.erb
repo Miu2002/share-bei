@@ -5,6 +5,7 @@
 <table>
 <% @favorites.each do |favorite| %>
 <tr>
+<td><%= image_tag favorite.shop.shop_photo,width: "200px", height: "120px"  %></td>
 <td style="text-align :center;"><%= favorite.shop.name %></td>
    <% end %>
   </tr>
