@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_123355) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_160644) do
   create_table "favorite_posts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "post_id", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_123355) do
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shop_photo"
     t.index ["shop_category_id"], name: "index_shops_on_shop_category_id"
   end
 

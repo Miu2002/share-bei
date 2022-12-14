@@ -3,6 +3,7 @@
 <main>
 <h1 class="sec-title"><%= @shops.name %></h1>
 <section id="shopinfo" class="wrapper">
+<td><%= image_tag @shops.shop_photo,width: "400px", height: "300px" %></td>
 <table>
 <tr>
 <td>住所：</td><td><%= @shops.address %></td>
